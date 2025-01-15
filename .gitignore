@@ -1,0 +1,4 @@
+/.dbdata
+app-backend/storage/tenant*
+app-backend/--cache-directory*
+.idea/
