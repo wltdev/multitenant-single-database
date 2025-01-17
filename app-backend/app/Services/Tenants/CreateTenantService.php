@@ -35,7 +35,7 @@ class CreateTenantService
             $this->createTenantPlanService->execute([
                 'tenant_id' => $tenant->id,
                 'plan_id' => 1,
-                'expires_at' => now()->addDays(env('TENANT_TRIAL_DAYS', 7)),
+                'expires_at' => now()->addDays(7),
                 'status' => 'active'
             ]);
 

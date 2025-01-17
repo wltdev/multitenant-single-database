@@ -34,6 +34,10 @@ return [
         'name' => 'roles.delete',
         'description' => 'Delete roles'
     ],
+    [
+        'name' => 'permissions.read',
+        'description' => 'Show permissions'
+    ],
 
     [
         'name' => 'companies.read',

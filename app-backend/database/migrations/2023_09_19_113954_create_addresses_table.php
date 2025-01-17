@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('neighborhood')->nullable();
             $table->foreignId('city_id')->constrained('cities');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

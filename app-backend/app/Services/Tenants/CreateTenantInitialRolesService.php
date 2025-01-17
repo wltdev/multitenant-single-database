@@ -23,7 +23,7 @@ class CreateTenantInitialRolesService
         $permissionsConfig = config('permissions');
 
         foreach ($permissionsConfig as $permission) {
-            Permission::findOrCreate($permission['name'], 'api');
+            Permission::findOrCreate($permission['name'], 'sanctum');
         }
     }
 
@@ -34,10 +34,10 @@ class CreateTenantInitialRolesService
         $adminRole = Role::firstOrCreate([
             'name' => 'Administrador',
             'tenant_id' => $this->tenant->id,
-            'guard_name' => 'api'
+            'guard_name' => 'sanctum'
         ]);
 
-        $allPermissions = Permission::where('guard_name', 'api')->get();
+        $allPermissions = Permission::where('guard_name', 'sanctum')->get();
 
         $adminRole->syncPermissions($allPermissions);
 
@@ -45,10 +45,10 @@ class CreateTenantInitialRolesService
         $userRole = Role::firstOrCreate([
             'name' => 'user',
             'tenant_id' => $this->tenant->id,
-            'guard_name' => 'api'
+            'guard_name' => 'sanctum'
         ]);
 
-        $userPermissions = Permission::where('guard_name', 'api')
+        $userPermissions = Permission::where('guard_name', 'sanctum')
             ->whereIn('name', [
                 'users.read',
                 'companies.read',
@@ -73,10 +73,10 @@ class CreateTenantInitialRolesService
         $guestRole = Role::firstOrCreate([
             'name' => 'guest',
             'tenant_id' => $this->tenant->id,
-            'guard_name' => 'api'
+            'guard_name' => 'sanctum'
         ]);
 
-        $guestPermissions = Permission::where('guard_name', 'api')
+        $guestPermissions = Permission::where('guard_name', 'sanctum')
             ->whereIn('name', [
                 'projects.read',
                 'leads.read',

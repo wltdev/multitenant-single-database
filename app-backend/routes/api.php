@@ -23,6 +23,16 @@ Route::post('/login', [LoginController::class, 'execute'])
 Route::post('/register', [StoreTenantController::class, 'store'])
     ->middleware('api');
 
+Route::get('/debug-permission', function (Request $request) {
+    $user = $request->user();
+    return response()->json([
+        'user_id' => $user->id,
+        'permissions' => $user->getAllPermissions()->pluck('name'),
+        'roles' => $user->getRoleNames(),
+        'guard_name' => $user->guard_name,
+    ]);
+})->middleware('auth:sanctum');
+
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function (Request $request) {

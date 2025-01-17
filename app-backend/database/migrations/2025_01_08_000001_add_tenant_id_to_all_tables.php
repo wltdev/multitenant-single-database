@@ -19,8 +19,7 @@ class AddTenantIdToAllTables extends Migration
         'leads',
         'lead_participants',
         'lead_status_history',
-        'lead_notes',
-        'media'
+        'lead_notes'
     ];
 
     public function up()

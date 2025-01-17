@@ -59,6 +59,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->singleton(
+            \Illuminate\Contracts\Debug\ExceptionHandler::class,
+            \App\Exceptions\Handler::class
+        );
+
         $this->app->bind(TenantRepositoryInterface::class, function ($app) {
             return new TenantRepository($app->make(Tenant::class));
         });
