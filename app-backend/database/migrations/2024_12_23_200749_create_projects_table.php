@@ -16,7 +16,6 @@ return new class extends Migration
             $table->uuid('tenant_id');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
             $table->foreignId('client_id')->nullable()->constrained('clients')->onDelete('set null');
             $table->date('begin_date')->nullable();
             $table->date('due_date')->nullable();

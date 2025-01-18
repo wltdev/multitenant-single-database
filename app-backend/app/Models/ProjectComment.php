@@ -8,7 +8,7 @@ use App\Traits\BelongsToTenant;
 
 class ProjectComment extends Model
 {
-    use HasFactory, SoftDeletes, BelongsToTenant;
+    use SoftDeletes, BelongsToTenant;
 
     protected $fillable = [
         'project_id',

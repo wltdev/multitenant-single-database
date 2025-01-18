@@ -25,7 +25,6 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'tenant_id' => $this->tenant_id,
-            'company_id' => $this->company_id,
             'roles' => $this->getRoleNames(),
             'role_id' => $this->roles->pluck('id'),
             'image' => $this->getFirstMediaUrl('users'),

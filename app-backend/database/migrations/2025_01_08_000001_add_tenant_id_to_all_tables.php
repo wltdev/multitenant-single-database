@@ -11,15 +11,8 @@ class AddTenantIdToAllTables extends Migration
         'companies',
         'clients',
         'projects',
-        'project_comments',
-        'project_files',
-        'project_members',
         'kanban_boards',
-        'kanban_board_columns',
         'leads',
-        'lead_participants',
-        'lead_status_history',
-        'lead_notes'
     ];
 
     public function up()

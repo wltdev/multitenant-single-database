@@ -51,9 +51,4 @@ class Company extends Model
         parent::boot();
         static::bootBelongsToTenant();
     }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class);
-    }
 }

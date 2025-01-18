@@ -8,9 +8,16 @@ class KanbanBoardRepository implements KanbanBoardRepositoryInterface
 {
     public function __construct(private KanbanBoard $model) {}
 
-    public function getAll()
+    public function getAll($type = null)
     {
-        $records = $this->model->get();
+        $query = $this->model;
+
+        if ($type) {
+            $query->where('type', $type);
+        }
+
+        $records = $query->get();
+
         return $records;
     }
 

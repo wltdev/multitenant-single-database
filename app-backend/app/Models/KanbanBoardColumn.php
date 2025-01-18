@@ -9,8 +9,7 @@ class KanbanBoardColumn extends Model
     protected $fillable = [
         'kanban_board_id',
         'name',
-        'order',
-        'tenant_id'
+        'order'
     ];
 
     public function kanbanBoard()

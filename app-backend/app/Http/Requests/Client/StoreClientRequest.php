@@ -19,7 +19,6 @@ class StoreClientRequest extends FormRequest
     public function attributes()
     {
         return [
-            'company_id' => 'Empresa',
             'name' => 'Nome',
             'email' => 'Email',
             'phone' => 'Telefone',
@@ -46,7 +45,6 @@ class StoreClientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'company_id' => 'required',
             'name' => 'required',
             'email' => 'required|unique:clients',
             'person_number' => 'required_if:type,individual',

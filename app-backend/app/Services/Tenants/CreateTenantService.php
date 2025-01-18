@@ -32,6 +32,8 @@ class CreateTenantService
 
             $adminRole = $this->createTenantInitialRolesService->execute($tenant);
 
+            $this->createTenantInitialKanbanBoardsService->execute($tenant->id);
+
             $this->createTenantPlanService->execute([
                 'tenant_id' => $tenant->id,
                 'plan_id' => 1,
@@ -56,8 +58,6 @@ class CreateTenantService
                 'is_main' => true,
                 'user_id' => $tenantUser->id
             ]);
-
-            // $authenticatedUser = $this->authenticateUserService->execute($payload['email'], $payload['password']);
 
             DB::commit();
 

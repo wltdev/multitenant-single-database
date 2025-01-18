@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->uuid('tenant_id');
-            $table->foreignId('company_id')->constrained('companies');
             $table->foreignId('address_id')->nullable()->constrained('addresses');
 
             $table->string('name')->nullable();

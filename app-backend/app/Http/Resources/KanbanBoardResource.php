@@ -18,7 +18,7 @@ class KanbanBoardResource extends JsonResource
             'id' => $this->id,
             'type' => $this->type,
             'name' => $this->name,
-            'columns' => $this->columns,
+            'columns' => KanbanBoardColumnResource::collection($this->columns),
             'description' => $this->description,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

@@ -25,6 +25,6 @@ class KanbanBoard extends Model
 
     public function columns()
     {
-        return $this->hasMany(KanbanBoardColumn::class)->with('tasks');
+        return $this->hasMany(KanbanBoardColumn::class); //->with('tasks');
     }
 }

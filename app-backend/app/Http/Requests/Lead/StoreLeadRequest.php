@@ -21,7 +21,6 @@ class StoreLeadRequest extends FormRequest
         return [
             'title' => 'titulo',
             'description' => 'descricao',
-            'company_id' => 'empresa',
             'kanban_board_column_id' => 'coluna',
             'kanban_board_column_order' => 'ordem coluna',
             'status' => 'status',
@@ -39,7 +38,6 @@ class StoreLeadRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'company_id' => 'required',
             'description' => 'max:255',
             'status' => 'max:255',
             'budget' => 'max:255',

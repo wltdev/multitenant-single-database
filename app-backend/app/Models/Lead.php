@@ -13,7 +13,6 @@ class Lead extends Model
     protected $fillable = [
         'kanban_board_column_id',
         'kanban_board_column_order',
-        'company_id',
         'title',
         'description',
         'status',

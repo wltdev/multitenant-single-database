@@ -156,7 +156,7 @@ class UsersController extends Controller
     public function store(StoreUserRequest $request): JsonResponse
     {
         $payload = $request->all();
-        $payload['tenant_id'] = tenant('id');
+        $payload['tenant_id'] = auth()->user()->tenant_id;
 
         $record = $this->userRepository->store($payload);
         $record->assignRole($request->validated()['role']);

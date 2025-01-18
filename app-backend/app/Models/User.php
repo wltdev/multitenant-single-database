@@ -76,9 +76,4 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->belongsTo(Tenant::class);
     }
-
-    // public function companies()
-    // {
-    //     return $this->belongsToMany(Company::class);
-    // }
 }

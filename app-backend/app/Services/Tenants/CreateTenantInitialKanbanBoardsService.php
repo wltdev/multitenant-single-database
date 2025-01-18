@@ -12,23 +12,26 @@ class CreateTenantInitialKanbanBoardsService
         private KanbanBoardColumnRepositoryInterface $kanbanBoardColumnRepository
     ) {}
 
-    public function execute($tenant)
+    public function execute($tenant_id)
     {
         $boards = [
             [
                 'name' => 'Lead Board',
                 'type' => 'lead',
-                'description' => 'Lead Kanban Board'
+                'description' => 'Lead Kanban Board',
+                'tenant_id' => $tenant_id
             ],
             [
                 'name' => 'Project Board',
                 'type' => 'project',
-                'description' => 'Project Kanban Board'
+                'description' => 'Project Kanban Board',
+                'tenant_id' => $tenant_id
             ],
             [
                 'name' => 'Task Board',
                 'type' => 'task',
-                'description' => 'Task Kanban Board'
+                'description' => 'Task Kanban Board',
+                'tenant_id' => $tenant_id
             ]
         ];
 

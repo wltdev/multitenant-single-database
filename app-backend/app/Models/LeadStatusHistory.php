@@ -3,12 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Traits\BelongsToTenant;
 
 class LeadStatusHistory extends Model
 {
-    use SoftDeletes, BelongsToTenant;
 
     protected $table = 'lead_status_history';
     protected $fillable = [

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->uuid('tenant_id');
             $table->foreignId('kanban_board_column_id')->nullable()->constrained('kanban_board_columns')->onDelete('cascade');
-            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('status')->default('new');

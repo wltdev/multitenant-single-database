@@ -3,13 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Traits\BelongsToTenant;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LeadParticipant extends Model
 {
-    use HasFactory, SoftDeletes, BelongsToTenant;
 
     protected $fillable = [
         'lead_id',

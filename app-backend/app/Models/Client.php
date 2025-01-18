@@ -15,7 +15,6 @@ class Client extends Model implements HasMedia
     use SoftDeletes, BelongsToTenant, InteractsWithMedia;
 
     protected $fillable = [
-        'company_id',
         'address_id',
 
         'name',

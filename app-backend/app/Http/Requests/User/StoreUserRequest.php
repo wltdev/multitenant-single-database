@@ -33,23 +33,6 @@ class StoreUserRequest extends FormRequest
         ];
     }
 
-    /**
-     * Configure the validator instance.
-     */
-    public function withValidator(Validator $validator): void
-    {
-        $validator->after(function (Validator $validator) {
-            $email = $this->request->get('email');
-
-            tenancy()->central(function ($tenant) use ($email, $validator) {
-                $recordCentral = User::where('email', $email)->first();
-                if ($recordCentral) {
-                    $validator->errors()->add('email', 'email já existe');
-                }
-            });
-        });
-    }
-
     public function messages(): array
     {
         return [

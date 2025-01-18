@@ -19,6 +19,7 @@ class KanbanBoardColumnResource extends JsonResource
             'kanban_board_id' => $this->kanban_board_id,
             'kanban_board' => $this->kanbanBoard,
             'name' => $this->name,
+            'tasks' => $this->tasks,
             'order' => $this->order,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

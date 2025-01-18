@@ -19,7 +19,6 @@ class StoreProjectRequest extends FormRequest
     public function attributes()
     {
         return [
-            'company_id' => 'Empresa',
             'title' => 'Titulo',
             'description' => 'Descrição',
             'client_id' => 'Cliente',
@@ -43,7 +42,6 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'company_id' => 'required',
             'title' => 'required',
             'client_id' => 'required',
             'begin_date' => 'required',

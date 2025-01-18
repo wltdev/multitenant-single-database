@@ -13,6 +13,7 @@ use App\Http\Controllers\LeadsController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\StoreTenantController;
 use App\Http\Resources\AuthResource;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [LoginController::class, 'execute'])
@@ -36,7 +37,7 @@ Route::get('/debug-permission', function (Request $request) {
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function (Request $request) {
-        return new AuthResource($request->user());
+        return new UserResource($request->user());
     });
 
     // Users
